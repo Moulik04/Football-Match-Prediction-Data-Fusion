@@ -1,16 +1,23 @@
-# Predicting Football Match Outcomes via Multi-Source Data Fusion
-### 🏆 Selected as a Penn State University Course Exemplar
+# Predicting Football Match Outcomes Using Multi-Source Data Fusion
 
-## 📌 Project Overview
-This project addresses the challenge of predicting short-term football match outcomes by fusing heterogeneous data sources. By integrating match-level, player-level, and betting market features, the model significantly outperforms single-source baselines.
+### 1. Project Overview
+Solved the challenge of improving short-term match outcome forecasts by fusing heterogeneous data sources, addressing the need for higher predictive accuracy in sports strategy and betting markets.
 
-## 🚀 Key Achievements
-* **Performance:** Developed an optimized **XGBoost model** achieving a **0.78 ROC-AUC**.
-* **Data Fusion:** Successfully integrated **~25,000 matches** across 15 seasons, fusing data from Kaggle (Team/Match), FBref (Player Metrics), and OddsPortal (Betting Odds).
-* **Feature Engineering:** Implemented rolling team form (last 5 matches) and aggregated player performance metrics, resulting in a **10% accuracy lift**.
-* **Recognition:** Awarded "Course Exemplar" status for technical complexity and rigorous post-hoc sensitivity analysis.
+### 2. Dataset
+Integrated data from three primary sources:
+* **Kaggle European Soccer Database:** Historical match results and team data.
+* **FBref.com:** Detailed player-level performance metrics.
+* **OddsPortal:** Historical betting odds for win/draw/loss probabilities.
+* **Scope:** ~25,000 matches across 15 seasons and 300+ clubs.
 
-## 🛠️ Tech Stack
-* **Language:** Python
-* **Libraries:** Scikit-learn, XGBoost, Pandas, NumPy, Matplotlib
-* **Environment:** Jupyter Notebook / Google Colab
+### 3. Approach
+* **Models:** Logistic Regression, Random Forest, and **XGBoost**.
+* **Tools:** Python (Pandas, Scikit-learn, XGBoost).
+* **Techniques:** Data fusion (joining player stats to match IDs), rolling team form averages (last 5 matches), and normalization of betting odds.
+
+### 4. Results
+* **Metrics:** The XGBoost model achieved a **ROC-AUC of 0.78** and an F1-score of 0.66.
+* **Insights:** Data fusion improved predictive performance by 10% compared to single-source models. Team form and betting odds were identified as the strongest predictors.
+
+### 5. Key Learnings
+I learned that data fusion is where the real value lies in sports analytics—raw data from one source isn't enough. I mastered the art of "Entity Resolution"—matching player and team names across three different databases with inconsistent naming conventions—and learned how to engineer time-series features like "Rolling Form" to capture momentum.

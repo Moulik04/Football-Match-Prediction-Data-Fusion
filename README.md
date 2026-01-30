@@ -20,4 +20,4 @@ Integrated data from three primary sources:
 * **Insights:** Data fusion improved predictive performance by 10% compared to single-source models. Team form and betting odds were identified as the strongest predictors.
 
 ### 5. Key Learnings
-I learned that data fusion is where the real value lies in sports analytics—raw data from one source isn't enough. I mastered the art of "Entity Resolution"—matching player and team names across three different databases with inconsistent naming conventions—and learned how to engineer time-series features like "Rolling Form" to capture momentum.
+I learned that data fusion is where the real value lies in sports analytics, raw data from one source isn't enough. I mastered the art of "Entity Resolution", matching player and team names across three different databases with inconsistent naming conventions, and learned how to engineer time-series features like "Rolling Form" to capture momentum.

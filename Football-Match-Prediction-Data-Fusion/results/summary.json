@@ -1,0 +1,175 @@
+{
+  "elo_k": 15.0,
+  "elo_home_advantage": 72.266956,
+  "big_five_matches": 42952,
+  "big_five_seasons": "1995/96 to 2018/19",
+  "part1": {
+    "rows": [
+      {
+        "model": "Base rates from the training seasons",
+        "log_loss": 1.06319,
+        "rps": 0.228298,
+        "brier": 0.641828,
+        "accuracy": 0.462395,
+        "home_win_auc": 0.5
+      },
+      {
+        "model": "Elo only (logistic regression)",
+        "log_loss": 0.966912,
+        "rps": 0.195865,
+        "brier": 0.57446,
+        "accuracy": 0.540343,
+        "home_win_auc": 0.710976
+      },
+      {
+        "model": "Elo + recent form (logistic regression)",
+        "log_loss": 0.966359,
+        "rps": 0.195644,
+        "brier": 0.573949,
+        "accuracy": 0.541256,
+        "home_win_auc": 0.712257
+      },
+      {
+        "model": "Elo + recent form (gradient boosting)",
+        "log_loss": 0.967101,
+        "rps": 0.196145,
+        "brier": 0.574471,
+        "accuracy": 0.538153,
+        "home_win_auc": 0.71154
+      }
+    ],
+    "info": {
+      "train_matches": 33806,
+      "test_matches": 5478,
+      "test_seasons": "2016/17 to 2018/19",
+      "train_seasons": "1997/98 to 2015/16"
+    }
+  },
+  "leak_check_big_five": [
+    {
+      "setup": "Version 1: form includes the match, random 80/20 split",
+      "home_win_auc": 0.762065,
+      "test_matches": 7682
+    },
+    {
+      "setup": "Form includes the match, earlier seasons predict later ones",
+      "home_win_auc": 0.783255,
+      "test_matches": 5390
+    },
+    {
+      "setup": "Form from earlier matches only, earlier seasons predict later ones",
+      "home_win_auc": 0.639207,
+      "test_matches": 5368
+    }
+  ],
+  "part2": {
+    "rows": [
+      {
+        "model": "Base rates from the training seasons",
+        "log_loss": 1.070909,
+        "rps": 0.227708,
+        "brier": 0.647534,
+        "accuracy": 0.446727,
+        "home_win_auc": 0.5
+      },
+      {
+        "model": "Bookmakers' consensus odds (no model)",
+        "log_loss": 0.980324,
+        "rps": 0.197906,
+        "brier": 0.584371,
+        "accuracy": 0.521227,
+        "home_win_auc": 0.707965
+      },
+      {
+        "model": "Elo + recent form (logistic regression)",
+        "log_loss": 0.994459,
+        "rps": 0.202053,
+        "brier": 0.59368,
+        "accuracy": 0.511367,
+        "home_win_auc": 0.693133
+      },
+      {
+        "model": "Elo + form + line-up ratings (logistic regression)",
+        "log_loss": 0.991693,
+        "rps": 0.201043,
+        "brier": 0.591862,
+        "accuracy": 0.51438,
+        "home_win_auc": 0.69645
+      },
+      {
+        "model": "Odds + Elo + form + line-ups (logistic regression)",
+        "log_loss": 0.979544,
+        "rps": 0.197749,
+        "brier": 0.583995,
+        "accuracy": 0.519036,
+        "home_win_auc": 0.708721
+      },
+      {
+        "model": "Odds + Elo + form + line-ups (gradient boosting)",
+        "log_loss": 0.985501,
+        "rps": 0.198912,
+        "brier": 0.587051,
+        "accuracy": 0.518762,
+        "home_win_auc": 0.704748
+      }
+    ],
+    "leak": [
+      {
+        "setup": "Version 1: form includes the match, random 80/20 split",
+        "home_win_auc": 0.783632,
+        "test_matches": 2733
+      },
+      {
+        "setup": "Form includes the match, earlier seasons predict later ones",
+        "home_win_auc": 0.772719,
+        "test_matches": 3532
+      },
+      {
+        "setup": "Form from earlier matches only, earlier seasons predict later ones",
+        "home_win_auc": 0.706694,
+        "test_matches": 3503
+      }
+    ],
+    "report": {
+      "kaggle_matches": 14585,
+      "kaggle_clubs": 164,
+      "clubs_matched": 164,
+      "name_clashes": 0,
+      "clubs_named_differently": 80,
+      "matches_joined": 14585,
+      "join_rate": 1.0,
+      "score_agreement": 1.0,
+      "score_disagreements": 0,
+      "spelling_only_errors": [
+        {
+          "league": "Serie A",
+          "src_name": "Inter",
+          "spelling_pick": "Udinese Calcio",
+          "ref_name": "FC Internazionale Milano"
+        },
+        {
+          "league": "Serie A",
+          "src_name": "Reggio Calabria",
+          "spelling_pick": "Cagliari Calcio",
+          "ref_name": "Urbs Reggina"
+        },
+        {
+          "league": "Serie A",
+          "src_name": "Siena",
+          "spelling_pick": "Cesena",
+          "ref_name": "SS Robur Siena"
+        }
+      ],
+      "usable_matches": 14571,
+      "train_matches": 10920,
+      "test_matches": 3651,
+      "test_seasons": "2014/15 and 2015/16",
+      "train_seasons": "2008/09 to 2013/14",
+      "fused_vs_odds_log_loss": {
+        "mean_diff": -0.00078,
+        "low": -0.003202,
+        "high": 0.001684
+      }
+    }
+  }
+}
